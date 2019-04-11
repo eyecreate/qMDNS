@@ -36,7 +36,7 @@ class qMDNS : public QObject {
     void hostFound (const QHostInfo& info);
 
   public:
-    static qMDNS* getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine);
+    static QObject* getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine);
     static qMDNS* getInstance();
 
     Q_INVOKABLE QString hostName() const;

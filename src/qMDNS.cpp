@@ -152,7 +152,7 @@ qMDNS* qMDNS::getInstance() {
 /**
  * Returns the only running instance of this class
  */
-qMDNS* qMDNS::getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine) {
+QObject* qMDNS::getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine) {
     Q_UNUSED(engine)
     Q_UNUSED(scriptEngine)
         
