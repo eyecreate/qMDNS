@@ -7,6 +7,8 @@
  */
 
 #include <QObject>
+#include <QQmlEngine>
+#include <QJSEngine>
 
 class QHostInfo;
 class QUdpSocket;
@@ -34,10 +36,11 @@ class qMDNS : public QObject {
     void hostFound (const QHostInfo& info);
 
   public:
+    static qMDNS* getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine);
     static qMDNS* getInstance();
 
-    QString hostName() const;
-    QString getAddress (const QString& string);
+    Q_INVOKABLE QString hostName() const;
+    Q_INVOKABLE QString getAddress (const QString& string);
 
   protected:
     explicit qMDNS();

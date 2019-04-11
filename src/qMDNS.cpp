@@ -150,6 +150,17 @@ qMDNS* qMDNS::getInstance() {
 }
 
 /**
+ * Returns the only running instance of this class
+ */
+qMDNS* qMDNS::getInstanceQML(QQmlEngine *engine, QJSEngine *scriptEngine) {
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+        
+    static qMDNS instance;
+    return &instance;
+}
+
+/**
  * Returns the mDNS name assigned to the client computer
  */
 QString qMDNS::hostName() const {

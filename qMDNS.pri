@@ -1,5 +1,6 @@
 QT += core
 QT += network
+QT += quick
 
 INCLUDEPATH += $$PWD/src
 
